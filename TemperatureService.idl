@@ -1,0 +1,9 @@
+module TemperatureApp {
+    typedef sequence<float> FloatSeq;
+
+    interface TemperatureService {
+        void sendTemperature(in string id, in string capteur_id, in float temperature);
+        /*permet à un client de récupérer les dernières températures d’un capteur donné.*/
+        FloatSeq getLastTemperatures(in string id, in string capteur_id, in long count);
+    };
+};
